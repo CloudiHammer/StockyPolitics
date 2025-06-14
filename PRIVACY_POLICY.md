@@ -1,29 +1,34 @@
-# Política de Privacidad de Stocky
+# Stocky Privacy Policy
 
-Fecha de entrada en vigor: [14 de junio de 2025]
+Effective date: [June 14, 2025]
 
-Gracias por utilizar Stocky. Tu privacidad es muy importante para nosotros. Esta Política de Privacidad explica cómo se maneja tu información al utilizar la aplicación.
+Thank you for using Stocky. Your privacy is very important to us. This Privacy Policy explains how your information is handled when using the app.
 
-## 1. Recogida de datos personales
-Stocky no recopila, almacena ni comparte datos personales de los usuarios. No solicitamos nombre, correo electrónico, ubicación, ni ningún otro dato identificable.
+## 1. Collection of Personal Data
 
-## 2. Conexión con Google Sheets
-Stocky permite, de forma opcional, conectar tu cuenta de Google para subir información a tus propias hojas de cálculo de Google Sheets en tu Google Drive.
-Esta funcionalidad:
+Stocky does not collect, store, or share any personal data from users. We do not request your name, email, location, or any other identifiable information.
 
-- Se utiliza únicamente para que el usuario guarde sus propios datos en su propia cuenta de Google.
-- No accedemos, almacenamos ni compartimos esos datos.
-- El acceso se gestiona directamente a través de los permisos de Google y puede revocarse en cualquier momento desde tu cuenta de Google.
+## 2. Google Sheets Integration
 
-## 3. Almacenamiento de datos
-Todos los datos introducidos en la aplicación se guardan exclusivamente en el dispositivo del usuario. No se transfieren a servidores externos ni a ningún otro proveedor.
+Stocky optionally allows you to connect your Google account to upload information to your own Google Sheets stored in your Google Drive. This functionality:
 
-## 4. Menores de edad
-La aplicación no está dirigida a menores de 13 años, y no recopilamos intencionadamente datos de menores.
+- Is used solely to let users save their own data in their own Google account.
+- We do not access, store, or share any of that data.
+- Access is managed directly through Google's permission system and can be revoked at any time from your Google account.
 
-## 5. Cambios en esta política
-Podremos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos cualquier cambio publicando la nueva política en esta página y actualizando la fecha de entrada en vigor.
+## 3. Data Storage
 
-## 6. Contacto
-Si tienes preguntas sobre esta política, puedes contactar con nosotros en:
-stockyinventory@proton.me
+All data entered in the app is stored locally on the user's device. It is not transferred to external servers or any third-party provider.
+
+## 4. Children
+
+The app is not intended for children under the age of 13, and we do not knowingly collect data from minors.
+
+## 5. Changes to This Policy
+
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the effective date.
+
+## 6. Contact
+
+If you have any questions about this policy, you can contact us at:  
+**stockyinventory@proton.me**

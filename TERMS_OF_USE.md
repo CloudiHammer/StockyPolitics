@@ -1,39 +1,47 @@
-Condiciones de Servicio – Stocky
-Fecha de entrada en vigor: 14 de junio de 2025
+# Terms of Service – Stocky
 
-Bienvenido a Stocky, una aplicación desarrollada para ayudarte a gestionar tu inventario personal o profesional de forma sencilla y privada.
+**Effective date: June 14, 2025**
 
-Al utilizar esta aplicación, aceptas los siguientes términos y condiciones:
+Welcome to Stocky, an app developed to help you manage your personal or professional inventory in a simple and private way.
 
-1. Uso de la aplicación
-Stocky se proporciona "tal cual", sin garantías de ningún tipo. Está destinada exclusivamente al uso personal del usuario. No se permite utilizar la aplicación para actividades ilegales, fraudulentas o que infrinjan derechos de terceros.
+By using this application, you agree to the following terms and conditions:
 
-2. Propiedad intelectual
-Todo el código, diseño y funcionalidad de la aplicación son propiedad del desarrollador, salvo aquellos elementos que pertenezcan a terceros (por ejemplo, bibliotecas de código abiertas, APIs externas, etc.).
+## 1. Use of the App
 
-El usuario no adquiere ningún derecho de propiedad sobre la aplicación al descargarla o utilizarla.
+Stocky is provided "as is", without any kind of warranty. It is intended solely for personal use. You may not use the app for illegal, fraudulent, or rights-infringing activities.
 
-3. Conexión con servicios externos
-La aplicación permite al usuario conectarse con su propia cuenta de Google Drive para guardar sus datos. Dicha integración se realiza exclusivamente entre el usuario y Google. El desarrollador no tiene acceso ni recopila ningún tipo de información contenida en el Drive del usuario.
+## 2. Intellectual Property
 
-4. Privacidad
-Stocky no recopila, almacena ni transmite datos personales del usuario. Para más información, consulta la Política de Privacidad.
+All code, design, and functionality of the app are the property of the developer, except for elements that belong to third parties (e.g., open-source libraries, external APIs, etc.).
 
-5. Limitación de responsabilidad
-El desarrollador no será responsable por:
+By downloading or using the app, you do not acquire any ownership rights over it.
 
-Pérdidas de datos almacenados por el usuario en su dispositivo o cuenta de Google Drive.
+## 3. Connection to External Services
 
-Fallos de funcionamiento derivados del mal uso de la aplicación.
+The app allows the user to connect to their own Google Drive account to save data. This integration occurs exclusively between the user and Google. The developer does not access or collect any information contained in the user's Drive.
 
-Daños directos o indirectos relacionados con el uso de Stocky.
+## 4. Privacy
 
-6. Cambios en las condiciones
-Estas condiciones pueden actualizarse en cualquier momento. Si esto ocurre, se informará a través de una actualización de la app o en el sitio web asociado, si lo hubiera.
+Stocky does not collect, store, or transmit any personal user data.  
+For more details, please see the [Privacy Policy](./PRIVACY_policy.md).
 
-7. Legislación aplicable
-Estas condiciones se rigen por la legislación española y europea. En caso de conflicto, se someterán a los tribunales competentes del lugar de residencia del usuario.
+## 5. Limitation of Liability
 
-8. Contacto
-Para cualquier duda o sugerencia, puedes ponerte en contacto con el desarrollador en:
-[stockyinventory@proton.me]
+The developer shall not be held liable for:
+
+- Loss of data stored by the user on their device or Google Drive  
+- Malfunctions caused by improper use of the app  
+- Any direct or indirect damages related to the use of Stocky
+
+## 6. Changes to the Terms
+
+These terms may be updated at any time. If changes occur, you will be notified through an app update or on an associated website, if available.
+
+## 7. Governing Law
+
+These terms are governed by Spanish and European law. In the event of a dispute, it shall be submitted to the competent courts in the user's place of residence.
+
+## 8. Contact
+
+For questions or suggestions, you can contact the developer at:  
+**stockyinventory@proton.me**
