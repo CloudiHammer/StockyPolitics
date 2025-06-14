@@ -26,4 +26,4 @@ Podremos actualizar esta Política de Privacidad ocasionalmente. Te notificaremo
 
 ## 6. Contacto
 Si tienes preguntas sobre esta política, puedes contactar con nosotros en:
-manuel.grandav@gmail.com
+stockyinventory@proton.me
