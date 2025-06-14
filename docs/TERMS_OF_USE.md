@@ -1,4 +1,4 @@
-# Terms of Service – Stocky
+# Terms of Service | Stocky – Easy Inventory
 
 **Effective date: June 14, 2025**
 

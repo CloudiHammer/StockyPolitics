@@ -1,4 +1,4 @@
-# Stocky Privacy Policy
+# Stocky – Easy Inventory Privacy Policy
 
 Effective date: [June 14, 2025]
 
