@@ -50,7 +50,7 @@ Stocky respects your privacy:
 - We do not collect personal data  
 - All data is stored locally on your device or in your Google account (if sync is enabled)
 
-🔗 [Privacy Policy](./PRIVACY_policy.md)  
+🔗 [Privacy Policy](./PRIVACY_POLICY.md)  
 🔗 [Terms of Service](./TERMS_OF_USE.md)
 
 ---
