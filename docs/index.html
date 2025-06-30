@@ -41,6 +41,65 @@
         </div>
     </header>
 
+    <!-- Our Story Section -->
+    <section class="section story-section animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">La Historia Detrás de Stocky</h2>
+            <p class="section-subtitle">Nacido del amor y la necesidad de simplificar lo complicado</p>
+
+            <div class="story-content">
+                <div class="story-narrative">
+                    <div class="story-text-block">
+                        <p class="story-paragraph">
+                            Todo comenzó con una simple frase: <strong>"No sé cuántas sudaderas me
+                                quedan..."</strong>
+                        </p>
+
+                        <p class="story-paragraph">
+                            Mi pareja gestiona un club de natación local donde varios nadadores entrenan cada día. Entre
+                            las prisas, el agua y la emoción del deporte, el material se prestaba constantemente:
+                            sudaderas, gorros, gafas, neceseres... Intentaba llevar el control en una hoja de Excel,
+                            pero era imposible saber qué quedaba disponible. La veía preocupada cada vez que alguien
+                            pedía material y no sabía si tenía suficiente.
+                        </p>
+
+                        <p class="story-paragraph">
+                            Una noche, después de verla contar manualmente todas las sudaderas del club por tercera vez
+                            esa semana, algo hizo clic en mi mente.
+                        </p>
+
+                        <p class="story-question">
+                            "¿Y si te hago una app?" le pregunté.
+                        </p>
+
+                        <p class="story-paragraph">
+                            Esa pregunta cambió todo. Lo que empezó como una solución de amor para un pequeño club de
+                            natación, se convirtió en Stocky: una herramienta pensada para ayudar a pequeños negocios a
+                            saber exactamente qué tienen, cuánto tienen y dónde está.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="story-conclusion">
+                    <div class="story-heart">💙</div>
+                    <p class="story-motto">Porque las mejores soluciones nacen cuando el amor se encuentra con la
+                        necesidad de simplificar lo que parece imposible.</p>
+                    <div class="story-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Club de natación</span>
+                        </div>
+                        <div class="stat-arrow">→</div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Posibilidades</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Business Benefits Section -->
     <section class="section business-benefits animate-on-scroll">
         <div class="container">
@@ -997,6 +1056,234 @@
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Story Section Styles */
+        .story-section {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(156, 39, 176, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="waves" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0 50 Q25 25 50 50 T100 50 V100 H0 Z" fill="rgba(74,144,226,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23waves)"/></svg>') repeat;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .story-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        .story-narrative {
+            margin-bottom: 60px;
+        }
+
+        .story-text-block {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-text-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.03), rgba(156, 39, 176, 0.03));
+            border-radius: 25px;
+        }
+
+        .story-paragraph {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-paragraph:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-question {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            font-style: italic;
+            margin: 35px 0;
+            padding: 25px;
+            background: rgba(74, 144, 226, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-conclusion {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-conclusion::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(156, 39, 176, 0.05));
+            border-radius: 25px;
+        }
+
+        .story-heart {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            animation: heartbeat 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-motto {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
+            min-width: 120px;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-arrow {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            animation: arrowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes arrowPulse {
+
+            0%,
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(10px);
+                opacity: 0.7;
+            }
+        }
+
+        /* Responsive Story Section */
+        @media (max-width: 768px) {
+            .story-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 25px 20px;
+            }
+
+            .story-icon {
+                font-size: 3rem;
+                width: 70px;
+                height: 70px;
+                margin: 0 auto;
+            }
+
+            .story-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .story-conclusion {
+                padding: 40px 25px;
+            }
+
+            .story-motto {
+                font-size: 1.1rem;
+            }
+
+            .story-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .stat-arrow {
+                transform: rotate(90deg);
             }
         }
 
