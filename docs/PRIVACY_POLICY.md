@@ -31,4 +31,4 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 ## 6. Contact
 
 If you have any questions about this policy, you can contact us at:  
-**stockyinventory@proton.me**
+**contact@stockyinventory.com**

@@ -44,4 +44,4 @@ These terms are governed by Spanish and European law. In the event of a dispute,
 ## 8. Contact
 
 For questions or suggestions, you can contact the developer at:  
-**stockyinventory@proton.me**
+**contact@stockyinventory.com**
