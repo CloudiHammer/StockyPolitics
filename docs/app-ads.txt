@@ -1,4 +1,1 @@
-# app-ads.txt file for StockyPolitics
-# Publisher ID de AdMob para verificación de anuncios
-
 google.com, pub-5941332038223631, DIRECT, f08c47fec0942fa0
