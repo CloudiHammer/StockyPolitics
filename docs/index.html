@@ -14,6 +14,20 @@
         rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="iconappStockyPNG.png">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69194JRX31"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-69194JRX31');
+        
+        // Función para enviar eventos personalizados
+        function trackEvent(eventName, parameters = {}) {
+            gtag('event', eventName, parameters);
+        }
+    </script>
 </head>
 
 <body>
@@ -29,7 +43,11 @@
                 <h1 class="hero-title">Stocky - Inventario Fácil</h1>
                 <p class="hero-subtitle">La solución definitiva de gestión de inventario que revoluciona tu negocio</p>
                 <a href="https://play.google.com/store/apps/details?id=com.stocky.stocky" target="_blank"
-                    class="cta-button">
+                    class="cta-button" onclick="trackEvent('download_click', {
+                        'button_location': 'hero_section',
+                        'button_text': 'Descargar en Google Play',
+                        'section': 'main_hero'
+                    });">
                     <span>📥 Descargar en Google Play</span>
                     <div class="button-shine"></div>
                 </a>
@@ -268,7 +286,12 @@
 
                     <div style="text-align: center;">
                         <a href="https://play.google.com/store/apps/details?id=com.stocky.stocky" target="_blank"
-                            style="display: inline-block; background: rgba(255,255,255,0.9); color: var(--primary-color); padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600;">📥
+                            style="display: inline-block; background: rgba(255,255,255,0.9); color: var(--primary-color); padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600;"
+                            onclick="trackEvent('download_click', {
+                                'button_location': 'pricing_premium',
+                                'button_text': 'Descargar en Google Play',
+                                'section': 'pricing'
+                            });">📥
                             Descargar en Google Play</a>
                     </div>
 
@@ -430,7 +453,11 @@
 
             <div class="cta-buttons">
                 <a href="https://play.google.com/store/apps/details?id=com.stocky.stocky" target="_blank"
-                    class="cta-button primary">
+                    class="cta-button primary" onclick="trackEvent('download_click', {
+                        'button_location': 'cta_section',
+                        'button_text': 'Descargar en Google Play',
+                        'section': 'final_cta'
+                    });">
                     <span>📥 Descargar en Google Play</span>
                 </a>
             </div>
@@ -1318,6 +1345,89 @@
             }
         }
     </style>
+
+    <!-- Eventos de seguimiento adicionales -->
+    <script>
+        // Eventos de scroll y tiempo en página
+        let startTime = Date.now();
+        let hasScrolled = false;
+        let sectionsViewed = new Set();
+
+        // Tiempo en página
+        window.addEventListener('beforeunload', function() {
+            const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+            trackEvent('page_time', {
+                'time_seconds': timeOnPage,
+                'page_title': document.title
+            });
+        });
+
+        // Eventos de scroll
+        window.addEventListener('scroll', function() {
+            if (!hasScrolled) {
+                hasScrolled = true;
+                trackEvent('page_scroll', {
+                    'scroll_depth': 'started'
+                });
+            }
+        });
+
+        // Detectar visualización de secciones
+        const sectionObserverOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id || entry.target.className;
+                    if (!sectionsViewed.has(sectionId)) {
+                        sectionsViewed.add(sectionId);
+                        trackEvent('section_view', {
+                            'section_name': sectionId,
+                            'section_title': entry.target.querySelector('h1, h2, h3')?.textContent || 'Unknown'
+                        });
+                    }
+                }
+            });
+        }, sectionObserverOptions);
+
+        // Observar secciones importantes
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section, .hero, .pricing, .features');
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Evento de carga de página
+            trackEvent('page_load', {
+                'page_title': document.title,
+                'page_url': window.location.href
+            });
+        });
+
+        // Eventos de interacción con elementos específicos
+        document.addEventListener('click', function(e) {
+            // Botones de características
+            if (e.target.closest('.feature-card, .premium-feature')) {
+                const featureText = e.target.closest('.feature-card, .premium-feature').querySelector('h3')?.textContent || 'Unknown';
+                trackEvent('feature_click', {
+                    'feature_name': featureText,
+                    'section': e.target.closest('section')?.className || 'unknown'
+                });
+            }
+
+            // Enlaces de navegación
+            if (e.target.closest('nav a, .nav-link')) {
+                const linkText = e.target.textContent.trim();
+                trackEvent('navigation_click', {
+                    'link_text': linkText,
+                    'link_url': e.target.href || 'unknown'
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
