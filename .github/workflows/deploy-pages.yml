@@ -1,6 +1,4 @@
-# Despliega la web en GitHub Pages (origen: GitHub Actions).
-# Tras el primer push a main: Repo → Settings → Pages → Build: GitHub Actions.
-# URL típica: https://<usuario>.github.io/<nombre-del-repo>/
+# Despliega en GitHub Pages. Dominio: www.stockyinventory.com (CNAME en public/).
 name: Deploy GitHub Pages
 
 on:
@@ -32,9 +30,7 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install & build
-        # base = /nombre-repo/ para que carguen JS/CSS en GitHub Pages (proyecto).
-        # Si tu repo es username.github.io, cambia la línea a: npm ci && npm run build -- --base /
-        run: npm ci && npm run build -- --base /${{ github.event.repository.name }}/
+        run: npm ci && npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

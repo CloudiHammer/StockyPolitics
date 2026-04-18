@@ -2,11 +2,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-// En producción, coincide con la URL del repo: /<nombre-repo>/
-// GitHub Actions puede sobrescribir con: vite build --base /${{ repo }}/
-export default defineConfig(({ mode }) => ({
+// Dominio www.stockyinventory.com (CNAME) → GitHub Pages sirve el sitio en la raíz /.
+export default defineConfig({
   plugins: [tailwindcss(), react()],
-  base: mode === 'production' ? '/StockyPolitics/' : '/',
+  base: '/',
   build: {
     outDir: 'docs',
     emptyOutDir: true,
@@ -14,4 +13,4 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
   },
   publicDir: 'public',
-}));
+});
