@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { btnPrimaryShine, btnRow, btnShineOverlay } from '../lib/buttonClasses';
 import { cn } from '../lib/cn';
+import { publicUrl } from '../lib/publicUrl';
 import { URL_APPLE, URL_PLAY } from '../lib/urls';
 
 const marqueeItems = [
@@ -45,7 +46,7 @@ export function Hero() {
                 aria-hidden
               />
               <img
-                src="/iconappStockyPNG.png"
+                src={publicUrl('iconappStockyPNG.png')}
                 alt="Stocky"
                 width={120}
                 height={120}

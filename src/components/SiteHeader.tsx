@@ -2,6 +2,7 @@ import { forwardRef, useState } from 'react';
 import { btnPrimarySm } from '../lib/buttonClasses';
 import { cn } from '../lib/cn';
 import { detectDevice, preferredMobileStore, type MobileStore } from '../lib/detectPlatform';
+import { publicUrl } from '../lib/publicUrl';
 import { URL_APPLE, URL_PLAY } from '../lib/urls';
 
 function initialStore(): MobileStore {
@@ -29,7 +30,7 @@ export const SiteHeader = forwardRef<HTMLElement>(function SiteHeader(_props, re
           aria-label="Stocky inicio"
           data-cursor-magnet
         >
-          <img src="/iconappStockyPNG.png" alt="" width={40} height={40} className="rounded-[14px] shadow-[var(--shadow)]" />
+          <img src={publicUrl('iconappStockyPNG.png')} alt="" width={40} height={40} className="rounded-[14px] shadow-[var(--shadow)]" />
           <span>Stocky</span>
         </a>
         <nav className="hidden gap-5 text-[0.95rem] font-medium min-[900px]:flex" aria-label="Principal">

@@ -1,3 +1,5 @@
+import { publicUrl } from '../lib/publicUrl';
+
 export function FaqSection() {
   return (
     <section className="py-16 md:py-24" id="faq">
@@ -84,7 +86,7 @@ export function FaqSection() {
             </summary>
             <p className="m-0 border-t border-slate-900/[0.08] px-2 pb-4 pt-0 text-[var(--text-light)]">
               Consulta nuestra{' '}
-              <a className="font-medium text-[var(--accent-1)]" href="/privacy.html">
+              <a className="font-medium text-[var(--accent-1)]" href={publicUrl('privacy.html')}>
                 Política de Privacidad
               </a>{' '}
               para detalles sobre datos y seguridad.

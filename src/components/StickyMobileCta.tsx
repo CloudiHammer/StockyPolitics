@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { cn } from '../lib/cn';
+import { publicUrl } from '../lib/publicUrl';
 import { detectDevice, preferredMobileStore, type MobileStore } from '../lib/detectPlatform';
 import { URL_APPLE, URL_PLAY } from '../lib/urls';
 
@@ -72,7 +73,7 @@ export function StickyMobileCta() {
       >
         <div className="mb-2 flex items-center gap-2.5 pl-1">
           <img
-            src="/iconappStockyPNG.png"
+            src={publicUrl('iconappStockyPNG.png')}
             alt=""
             width={36}
             height={36}

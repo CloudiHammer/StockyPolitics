@@ -2,17 +2,18 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '../lib/cn';
+import { publicUrl } from '../lib/publicUrl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const shots = [
-  { src: '/screenshots/dashboard.png', alt: 'Dashboard principal de Stocky', caption: 'Dashboard' },
-  { src: '/screenshots/inventory.png', alt: 'Lista de inventario', caption: 'Inventario' },
-  { src: '/screenshots/compartir.png', alt: 'Compartir inventario', caption: 'Compartir' },
-  { src: '/screenshots/analisis.png', alt: 'Análisis inteligente', caption: 'Análisis IA' },
-  { src: '/screenshots/analytics.png', alt: 'Analíticas avanzadas', caption: 'Analíticas' },
+  { src: publicUrl('screenshots/dashboard.png'), alt: 'Dashboard principal de Stocky', caption: 'Dashboard' },
+  { src: publicUrl('screenshots/inventory.png'), alt: 'Lista de inventario', caption: 'Inventario' },
+  { src: publicUrl('screenshots/compartir.png'), alt: 'Compartir inventario', caption: 'Compartir' },
+  { src: publicUrl('screenshots/analisis.png'), alt: 'Análisis inteligente', caption: 'Análisis IA' },
+  { src: publicUrl('screenshots/analytics.png'), alt: 'Analíticas avanzadas', caption: 'Analíticas' },
   {
-    src: '/screenshots/exportarFacturas.png',
+    src: publicUrl('screenshots/exportarFacturas.png'),
     alt: 'Exportar facturas del evento a Excel — Premium',
     caption: 'Exportar facturas (Premium)',
   },

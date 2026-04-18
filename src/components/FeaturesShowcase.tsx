@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { type ReactNode, useLayoutEffect, useRef, useState } from 'react';
 import { cn } from '../lib/cn';
+import { publicUrl } from '../lib/publicUrl';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -191,7 +192,7 @@ export function FeaturesShowcase() {
                     active === 'dashboard' && 'z-[1] opacity-100',
                   )}
                   data-key="dashboard"
-                  src="/screenshots/dashboard.png"
+                  src={publicUrl('screenshots/dashboard.png')}
                   alt="Dashboard y analíticas de Stocky"
                   width={390}
                   height={844}
@@ -203,7 +204,7 @@ export function FeaturesShowcase() {
                     active === 'inventory' && 'z-[1] opacity-100',
                   )}
                   data-key="inventory"
-                  src="/screenshots/inventory.png"
+                  src={publicUrl('screenshots/inventory.png')}
                   alt="Inventario en Stocky"
                   width={390}
                   height={844}
@@ -215,7 +216,7 @@ export function FeaturesShowcase() {
                     active === 'compartir' && 'z-[1] opacity-100',
                   )}
                   data-key="compartir"
-                  src="/screenshots/compartir.png"
+                  src={publicUrl('screenshots/compartir.png')}
                   alt="Compartir inventario"
                   width={390}
                   height={844}
@@ -227,7 +228,7 @@ export function FeaturesShowcase() {
                     active === 'analisis' && 'z-[1] opacity-100',
                   )}
                   data-key="analisis"
-                  src="/screenshots/analisis.png"
+                  src={publicUrl('screenshots/analisis.png')}
                   alt="Análisis inteligente"
                   width={390}
                   height={844}
@@ -239,7 +240,7 @@ export function FeaturesShowcase() {
                     active === 'exportar' && 'z-[1] opacity-100',
                   )}
                   data-key="exportar"
-                  src="/screenshots/exportarFacturas.png"
+                  src={publicUrl('screenshots/exportarFacturas.png')}
                   alt="Exportar facturas del evento a Excel"
                   width={390}
                   height={844}
