@@ -1,4 +1,4 @@
-# Despliega en GitHub Pages. Dominio: www.stockyinventory.com (CNAME en public/).
+# Despliega en GitHub Pages con dominio propio (CNAME en public/).
 name: Deploy GitHub Pages
 
 on:

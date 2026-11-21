@@ -6,7 +6,7 @@ export function BusinessMarquee() {
           Ideal para pequeños negocios
         </h2>
         <p className="mx-auto mb-12 max-w-[640px] text-center text-[1.0625rem] font-medium leading-[1.55] tracking-tight text-[var(--text-light)] md:mb-12">
-          Stocky encaja en la vida real del comercio pequeño: ferias, mercadillos, tiendas de barrio, talleres y equipos que
+          Inventario Fácil encaja en la vida real del comercio pequeño: ferias, mercadillos, tiendas de barrio, talleres y equipos que
           necesitan claridad sin software caro ni formaciones eternas
         </p>
         <div className="flex flex-col gap-4">

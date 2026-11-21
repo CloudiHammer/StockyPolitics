@@ -69,11 +69,11 @@ export function StickyMobileCta() {
       <div
         className="pointer-events-auto rounded-2xl border border-slate-900/[0.08] bg-white/95 p-2.5 shadow-[0_10px_30px_rgba(15,23,42,0.18)] backdrop-blur-md"
         role="region"
-        aria-label={isApple ? 'Descargar Stocky en el App Store' : 'Descargar Stocky en Google Play'}
+        aria-label={isApple ? 'Descargar Inventario Fácil en el App Store' : 'Descargar Inventario Fácil en Google Play'}
       >
         <div className="mb-2 flex items-center gap-2.5 pl-1">
           <img
-            src={publicUrl('iconappStockyPNG.png')}
+            src={publicUrl('app-icon.png')}
             alt=""
             width={36}
             height={36}
@@ -81,7 +81,7 @@ export function StickyMobileCta() {
             className="h-9 w-9 shrink-0 rounded-xl"
           />
           <div className="min-w-0 flex-1 leading-tight">
-            <span className="block truncate text-[0.9rem] font-bold text-[var(--text-color)]">Stocky</span>
+            <span className="block truncate text-[0.9rem] font-bold text-[var(--text-color)]">Inventario Fácil</span>
             <span className="block truncate text-[0.72rem] text-[var(--text-light)]">
               {isApple ? 'Disponible en App Store' : 'Disponible en Google Play'}
             </span>

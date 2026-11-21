@@ -193,7 +193,7 @@ export function FeaturesShowcase() {
                   )}
                   data-key="dashboard"
                   src={publicUrl('screenshots/dashboard.png')}
-                  alt="Dashboard y analíticas de Stocky"
+                  alt="Dashboard y analíticas de Inventario Fácil"
                   width={390}
                   height={844}
                   aria-hidden={active !== 'dashboard'}
@@ -205,7 +205,7 @@ export function FeaturesShowcase() {
                   )}
                   data-key="inventory"
                   src={publicUrl('screenshots/inventory.png')}
-                  alt="Inventario en Stocky"
+                  alt="Inventario en Inventario Fácil"
                   width={390}
                   height={844}
                   aria-hidden={active !== 'inventory'}

@@ -25,7 +25,7 @@ export function CtaFinal() {
           Empieza gratis en 2 minutos
         </h2>
         <p className="mx-auto mb-6 max-w-[620px] text-[1.1rem] opacity-95">
-          Descarga Stocky, añade tus primeros productos y decide luego si activas Premium. El primer mes es gratis y
+          Descarga Inventario Fácil, añade tus primeros productos y decide luego si activas Premium. El primer mes es gratis y
           cancelas cuando quieras.
         </p>
         <div className="flex flex-wrap justify-center gap-3">

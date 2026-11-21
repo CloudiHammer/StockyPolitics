@@ -27,11 +27,11 @@ export const SiteHeader = forwardRef<HTMLElement>(function SiteHeader(_props, re
         <a
           className="inline-flex items-center gap-2.5 font-extrabold text-[var(--text-color)] no-underline"
           href="#top"
-          aria-label="Stocky inicio"
+          aria-label="Inventario Fácil inicio"
           data-cursor-magnet
         >
-          <img src={publicUrl('iconappStockyPNG.png')} alt="" width={40} height={40} className="rounded-[14px] shadow-[var(--shadow)]" />
-          <span>Stocky</span>
+          <img src={publicUrl('app-icon.png')} alt="" width={40} height={40} className="rounded-[14px] shadow-[var(--shadow)]" />
+          <span>Inventario Fácil</span>
         </a>
         <nav className="hidden gap-5 text-[0.95rem] font-medium min-[900px]:flex" aria-label="Principal">
           <a className="text-[var(--text-light)] no-underline transition-colors hover:text-[var(--accent-1)]" href="#beneficios" data-cursor-magnet>

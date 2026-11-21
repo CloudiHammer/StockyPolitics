@@ -14,7 +14,7 @@ export function UserFirstSection() {
             Hecha por y para ti
           </h2>
           <p className="m-0 text-center text-[1rem] leading-[1.65] text-[var(--text-light)]">
-            Stocky lo construimos escuchando a las personas que la usan cada día. ¿Echas algo en falta o se te ocurre
+            Inventario Fácil lo construimos escuchando a las personas que la usan cada día. ¿Echas algo en falta o se te ocurre
             cómo mejorarla?{' '}
             <a
               className="font-semibold text-[var(--accent-1)] underline decoration-transparent underline-offset-[3px] transition-colors hover:text-[#1565c0]"

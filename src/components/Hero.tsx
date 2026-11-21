@@ -46,8 +46,8 @@ export function Hero() {
                 aria-hidden
               />
               <img
-                src={publicUrl('iconappStockyPNG.png')}
-                alt="Stocky"
+                src={publicUrl('app-icon.png')}
+                alt="Inventario Fácil"
                 width={120}
                 height={120}
                 decoding="async"
@@ -59,11 +59,8 @@ export function Hero() {
               <span className="text-balance">Stock en la nube · Ventas en eventos · Equipo sincronizado</span>
             </p>
             <h1 id="heroTitle" className="m-0 flex w-full flex-col items-center gap-1">
-              <span className="text-[clamp(1.85rem,4.2vw,2.35rem)] font-bold tracking-tight text-white/95 drop-shadow-md">
-                Stocky
-              </span>
               <span className="bg-gradient-to-r from-white via-amber-100 to-sky-100 bg-clip-text text-[clamp(2.5rem,6.5vw,3.75rem)] font-black leading-tight tracking-tighter text-transparent drop-shadow-md max-md:!text-white max-md:[-webkit-text-fill-color:#fff] max-md:bg-none">
-                Inventario fácil
+                Inventario Fácil
               </span>
             </h1>
             <ul className="m-0 flex w-full max-w-xl flex-wrap justify-center gap-2 p-0 sm:max-w-none">

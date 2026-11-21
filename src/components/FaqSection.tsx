@@ -33,12 +33,12 @@ export function FaqSection() {
             <p className="m-0 border-t border-slate-900/[0.08] px-2 pb-4 pt-0 text-[var(--text-light)]">
               El primer mes de Premium es <strong>gratis</strong>. Se gestiona desde Google Play o App Store, así que el
               cobro solo se activa si no cancelas antes de que acabe el periodo de prueba. Puedes cancelar en cualquier
-              momento desde tu tienda de apps y seguir usando Stocky gratis con los límites del plan gratuito.
+              momento desde tu tienda de apps y seguir usando Inventario Fácil gratis con los límites del plan gratuito.
             </p>
           </details>
           <details className="rounded-[var(--border-radius)] border border-slate-900/10 bg-white px-4" data-cursor-magnet>
             <summary className="cursor-pointer list-none py-4 pl-2 pr-2 font-semibold [&::-webkit-details-marker]:hidden">
-              ¿Puedo usar Stocky en varios dispositivos?
+              ¿Puedo usar Inventario Fácil en varios dispositivos?
             </summary>
             <p className="m-0 border-t border-slate-900/[0.08] px-2 pb-4 pt-0 text-[var(--text-light)]">
               Sí. Tus datos se sincronizan en la nube para que puedas acceder desde el móvil o tablet con la misma cuenta.
@@ -58,7 +58,7 @@ export function FaqSection() {
               ¿Qué incluye el análisis inteligente?
             </summary>
             <p className="m-0 border-t border-slate-900/[0.08] px-2 pb-4 pt-0 text-[var(--text-light)]">
-              Con Premium, Stocky analiza tus movimientos para mostrar la salud del inventario, alertas de rotación y
+              Con Premium, Inventario Fácil analiza tus movimientos para mostrar la salud del inventario, alertas de rotación y
               recomendaciones accionables.
             </p>
           </details>
@@ -67,7 +67,7 @@ export function FaqSection() {
               ¿Puedo exportar las facturas de un evento para mi asesor?
             </summary>
             <p className="m-0 border-t border-slate-900/[0.08] px-2 pb-4 pt-0 text-[var(--text-light)]">
-              Sí, pero <strong>solo con Stocky Premium</strong>. En la pantalla del evento, abre el menú de tres puntos (⋮) y
+              Sí, pero <strong>solo con Inventario Fácil Premium</strong>. En la pantalla del evento, abre el menú de tres puntos (⋮) y
               elige «Exportar a Excel» para descargar las facturas y compartirlas con tu asesor, gestoría u otra persona que
               las necesite.
             </p>

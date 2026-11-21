@@ -1,14 +1,14 @@
-# Terms of Service | Stocky – Easy Inventory
+# Terms of Service | Inventario Fácil
 
 **Effective date: June 14, 2025**
 
-Welcome to Stocky, an app developed to help you manage your personal or professional inventory in a simple and private way.
+Welcome to Inventario Fácil, an app developed to help you manage your personal or professional inventory in a simple and private way.
 
 By using this application, you agree to the following terms and conditions:
 
 ## 1. Use of the App
 
-Stocky is provided "as is", without any kind of warranty. It is intended solely for personal use. You may not use the app for illegal, fraudulent, or rights-infringing activities.
+Inventario Fácil is provided "as is", without any kind of warranty. It is intended solely for personal use. You may not use the app for illegal, fraudulent, or rights-infringing activities.
 
 ## 2. Intellectual Property
 
@@ -22,7 +22,7 @@ The app allows the user to connect to their own Google Drive account to save dat
 
 ## 4. Privacy
 
-Stocky does not collect, store, or transmit any personal user data.  
+Inventario Fácil does not collect, store, or transmit any personal user data.  
 For more details, please see the [Privacy Policy](./PRIVACY_policy.md).
 
 ## 5. Limitation of Liability
@@ -31,7 +31,7 @@ The developer shall not be held liable for:
 
 - Loss of data stored by the user on their device or Google Drive  
 - Malfunctions caused by improper use of the app  
-- Any direct or indirect damages related to the use of Stocky
+- Any direct or indirect damages related to the use of Inventario Fácil
 
 ## 6. Changes to the Terms
 

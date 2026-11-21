@@ -7,7 +7,7 @@ import { publicUrl } from '../lib/publicUrl';
 gsap.registerPlugin(ScrollTrigger);
 
 const shots = [
-  { src: publicUrl('screenshots/dashboard.png'), alt: 'Dashboard principal de Stocky', caption: 'Dashboard' },
+  { src: publicUrl('screenshots/dashboard.png'), alt: 'Dashboard principal de Inventario Fácil', caption: 'Dashboard' },
   { src: publicUrl('screenshots/inventory.png'), alt: 'Lista de inventario', caption: 'Inventario' },
   { src: publicUrl('screenshots/compartir.png'), alt: 'Compartir inventario', caption: 'Compartir' },
   { src: publicUrl('screenshots/analisis.png'), alt: 'Análisis inteligente', caption: 'Análisis IA' },
@@ -53,7 +53,7 @@ export function ScreenshotsFan() {
       <section className="relative bg-gradient-to-b from-white/[0.92] to-[rgba(246,248,252,0.95)] py-16 md:py-24" id="capturas">
         <div className="site-container">
           <h2 className="m-0 mb-3 text-center text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight text-[var(--text-color)]">
-            Ve Stocky en acción
+            Ve Inventario Fácil en acción
           </h2>
           <p className="mx-auto mb-12 max-w-[640px] text-center text-[1.0625rem] font-medium leading-[1.55] tracking-tight text-[var(--text-light)] md:mb-12">
             Desde el inventario compartido hasta el punto de venta y la exportación de facturas (Premium)

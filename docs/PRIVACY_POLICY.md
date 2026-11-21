@@ -1,16 +1,16 @@
-# Stocky – Easy Inventory Privacy Policy
+# Inventario Fácil Privacy Policy
 
 Effective date: [June 14, 2025]
 
-Thank you for using Stocky. Your privacy is very important to us. This Privacy Policy explains how your information is handled when using the app.
+Thank you for using Inventario Fácil. Your privacy is very important to us. This Privacy Policy explains how your information is handled when using the app.
 
 ## 1. Collection of Personal Data
 
-Stocky does not collect, store, or share any personal data from users. We do not request your name, email, location, or any other identifiable information.
+Inventario Fácil does not collect, store, or share any personal data from users. We do not request your name, email, location, or any other identifiable information.
 
 ## 2. Google Sheets Integration
 
-Stocky optionally allows you to connect your Google account to upload information to your own Google Sheets stored in your Google Drive. This functionality:
+Inventario Fácil optionally allows you to connect your Google account to upload information to your own Google Sheets stored in your Google Drive. This functionality:
 
 - Is used solely to let users save their own data in their own Google account.
 - We do not access, store, or share any of that data.
