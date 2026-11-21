@@ -3,10 +3,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '../lib/cn';
 import { publicUrl } from '../lib/publicUrl';
+import { useLang } from '../i18n';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const shots = [
+const shotsEs = [
   { src: publicUrl('screenshots/dashboard.png'), alt: 'Dashboard principal de Inventario Fácil', caption: 'Dashboard' },
   { src: publicUrl('screenshots/inventory.png'), alt: 'Lista de inventario', caption: 'Inventario' },
   { src: publicUrl('screenshots/compartir.png'), alt: 'Compartir inventario', caption: 'Compartir' },
@@ -19,7 +20,22 @@ const shots = [
   },
 ];
 
+const shotsEn = [
+  { src: publicUrl('screenshots/dashboard.png'), alt: 'Inventario Fácil main dashboard', caption: 'Dashboard' },
+  { src: publicUrl('screenshots/inventory.png'), alt: 'Inventory list', caption: 'Inventory' },
+  { src: publicUrl('screenshots/compartir.png'), alt: 'Share inventory', caption: 'Sharing' },
+  { src: publicUrl('screenshots/analisis.png'), alt: 'Smart analysis', caption: 'AI analysis' },
+  { src: publicUrl('screenshots/analytics.png'), alt: 'Advanced analytics', caption: 'Analytics' },
+  {
+    src: publicUrl('screenshots/exportarFacturas.png'),
+    alt: 'Export event invoices to Excel — Premium',
+    caption: 'Export invoices (Premium)',
+  },
+];
+
 export function ScreenshotsFan() {
+  const { t } = useLang();
+  const shots = t(shotsEs, shotsEn);
   const fanRef = useRef<HTMLDivElement>(null);
   const [lightbox, setLightbox] = useState<{ src: string; caption: string } | null>(null);
 
@@ -53,10 +69,13 @@ export function ScreenshotsFan() {
       <section className="relative bg-gradient-to-b from-white/[0.92] to-[rgba(246,248,252,0.95)] py-16 md:py-24" id="capturas">
         <div className="site-container">
           <h2 className="m-0 mb-3 text-center text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight text-[var(--text-color)]">
-            Ve Inventario Fácil en acción
+            {t('Ve Inventario Fácil en acción', 'See Inventario Fácil in action')}
           </h2>
           <p className="mx-auto mb-12 max-w-[640px] text-center text-[1.0625rem] font-medium leading-[1.55] tracking-tight text-[var(--text-light)] md:mb-12">
-            Desde el inventario compartido hasta el punto de venta y la exportación de facturas (Premium)
+            {t(
+              'Desde el inventario compartido hasta el punto de venta y la exportación de facturas (Premium)',
+              'From shared inventory to point of sale and invoice export (Premium)',
+            )}
           </p>
           <div
             className="flex flex-wrap justify-center gap-3 py-10 [perspective:1400px] md:gap-4"
@@ -104,7 +123,7 @@ export function ScreenshotsFan() {
           <button
             type="button"
             className="fixed right-6 top-5 grid h-12 w-12 place-content-center rounded-full border-0 bg-white/12 text-3xl leading-none text-white"
-            aria-label="Cerrar"
+            aria-label={t('Cerrar', 'Close')}
             onClick={() => setLightbox(null)}
           >
             &times;

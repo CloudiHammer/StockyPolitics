@@ -1,5 +1,6 @@
 // Reseñas reales de Google Play (capturas en public/screenshots/reseñas).
 // Si se añaden nuevas opiniones, mantén este mismo shape.
+import { useLang } from '../i18n';
 
 type Review = {
   name: string;
@@ -35,14 +36,11 @@ const reviews: Review[] = [
   },
 ];
 
-const aggregate = {
-  rating: '5,0',
-  label: 'Opiniones verificadas',
-};
 
 function Stars({ value }: { value: number }) {
+  const { t } = useLang();
   return (
-    <span className="inline-flex gap-0.5 text-amber-400" aria-label={`${value} sobre 5`}>
+    <span className="inline-flex gap-0.5 text-amber-400" aria-label={t(`${value} sobre 5`, `${value} out of 5`)}>
       {[0, 1, 2, 3, 4].map((i) => (
         <svg
           key={i}
@@ -62,6 +60,8 @@ function Stars({ value }: { value: number }) {
 }
 
 export function TestimonialsSection() {
+  const { t } = useLang();
+  const aggregate = { rating: t('5,0', '5.0'), label: t('Opiniones verificadas', 'Verified reviews') };
   return (
     <section
       className="bg-[var(--background-color)] py-16 md:py-24"
@@ -79,10 +79,13 @@ export function TestimonialsSection() {
             id="testimonialsTitle"
             className="m-0 mb-3 text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight text-[var(--text-color)]"
           >
-            Pequeños negocios que ya lo llevan al día
+            {t('Pequeños negocios que ya lo llevan al día', 'Small businesses already on top of it')}
           </h2>
           <p className="m-0 max-w-[600px] text-[1.0625rem] font-medium leading-[1.55] tracking-tight text-[var(--text-light)]">
-            Opiniones reales de usuarios. Todas empezaron, como tú, con la versión gratuita.
+            {t(
+              'Opiniones reales de usuarios. Todas empezaron, como tú, con la versión gratuita.',
+              'Real user reviews (originally written in Spanish). They all started, like you, with the free version.',
+            )}
           </p>
         </div>
 

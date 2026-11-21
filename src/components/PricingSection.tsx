@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import { btnBase, btnLightBlock, btnSm } from '../lib/buttonClasses';
 import { cn } from '../lib/cn';
 import { URL_APPLE, URL_PLAY } from '../lib/urls';
+import { useLang } from '../i18n';
 
 const btnOutlineBlockSm = cn(
   btnBase,
@@ -11,13 +12,22 @@ const btnOutlineBlockSm = cn(
 
 type FreeRow = { kind: 'limit' | 'check'; text: string };
 
-const freeRows: FreeRow[] = [
+const freeRowsEs: FreeRow[] = [
   { kind: 'limit', text: 'Hasta 30 productos' },
   { kind: 'limit', text: 'Puedes ampliar viendo un anuncio puntual' },
   { kind: 'limit', text: 'Hasta 3 eventos' },
   { kind: 'limit', text: 'Hasta 10 ventas por evento' },
   { kind: 'check', text: 'Sincronización en la nube' },
   { kind: 'check', text: 'Reportes básicos' },
+];
+
+const freeRowsEn: FreeRow[] = [
+  { kind: 'limit', text: 'Up to 30 products' },
+  { kind: 'limit', text: 'Unlock more by watching an occasional ad' },
+  { kind: 'limit', text: 'Up to 3 events' },
+  { kind: 'limit', text: 'Up to 10 sales per event' },
+  { kind: 'check', text: 'Cloud sync' },
+  { kind: 'check', text: 'Basic reports' },
 ];
 
 function LimitIcon() {
@@ -36,23 +46,27 @@ function LimitIcon() {
 
 export function PricingSection() {
   const [yearly, setYearly] = useState(true);
+  const { t } = useLang();
+  const freeRows = t(freeRowsEs, freeRowsEn);
 
   return (
     <section className="bg-[var(--surface-color)] py-16 md:py-24" id="precios">
       <div className="site-container">
         <h2 className="m-0 mb-3 text-center text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight text-[var(--text-color)]">
-          Elige Tu Plan
+          {t('Elige Tu Plan', 'Choose Your Plan')}
         </h2>
         <p className="mx-auto mb-8 max-w-[640px] text-center text-[1.0625rem] font-medium leading-[1.55] tracking-tight text-[var(--text-light)]">
-          Empieza gratis y, cuando necesites más capacidad o exportar facturas a Excel, pasa a Premium con el primer mes
-          gratis.
+          {t(
+            'Empieza gratis y, cuando necesites más capacidad o exportar facturas a Excel, pasa a Premium con el primer mes gratis.',
+            'Start free and, when you need more capacity or to export invoices to Excel, upgrade to Premium with the first month free.',
+          )}
         </p>
 
         <div className="mx-auto mb-10 flex w-fit flex-col items-center gap-2 sm:flex-row sm:gap-3">
           <div
             className="relative flex rounded-full border border-slate-900/[0.08] bg-slate-900/[0.06] p-1"
             role="group"
-            aria-label="Periodo de facturación"
+            aria-label={t('Periodo de facturación', 'Billing period')}
           >
             <button
               type="button"
@@ -63,7 +77,7 @@ export function PricingSection() {
               aria-pressed={!yearly}
               onClick={() => setYearly(false)}
             >
-              Mensual
+              {t('Mensual', 'Monthly')}
             </button>
             <button
               type="button"
@@ -74,7 +88,7 @@ export function PricingSection() {
               aria-pressed={yearly}
               onClick={() => setYearly(true)}
             >
-              Anual
+              {t('Anual', 'Yearly')}
             </button>
           </div>
           <span
@@ -83,18 +97,18 @@ export function PricingSection() {
               yearly ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-900/[0.06] text-[var(--text-light)]',
             )}
           >
-            Ahorra 47 %
+            {t('Ahorra 47 %', 'Save 47%')}
           </span>
         </div>
 
         <div className="mx-auto grid max-w-[960px] gap-7 min-[860px]:grid-cols-2">
           <article className="relative flex flex-col rounded-[var(--border-radius-lg)] border border-slate-900/[0.08] bg-white px-7 py-9 shadow-[var(--shadow)] min-[860px]:px-7 min-[860px]:py-9">
-            <h3 className="m-0 mb-2 text-2xl">Gratuito</h3>
+            <h3 className="m-0 mb-2 text-2xl">{t('Gratuito', 'Free')}</h3>
             <p className="m-0 text-[2.75rem] font-extrabold leading-none">
               <span className="align-super text-xl">€</span>0
             </p>
-            <p className="mb-1 mt-2 text-[0.9rem] text-[var(--text-light)]">Sin caducidad</p>
-            <p className="mb-4 text-[0.8rem] font-semibold uppercase tracking-wider text-amber-800/90">Con límites</p>
+            <p className="mb-1 mt-2 text-[0.9rem] text-[var(--text-light)]">{t('Sin caducidad', 'Never expires')}</p>
+            <p className="mb-4 text-[0.8rem] font-semibold uppercase tracking-wider text-amber-800/90">{t('Con límites', 'With limits')}</p>
             <ul className="m-0 mb-6 list-none p-0">
               {freeRows.map((row) => (
                 <li
@@ -158,7 +172,7 @@ export function PricingSection() {
             style={{ backgroundImage: 'var(--grad-brand)' }}
           >
             <span className="absolute right-[-36px] top-[18px] z-[1] rotate-45 bg-white/95 px-10 py-1.5 text-xs font-extrabold text-[#7b1fa2]">
-              Más popular
+              {t('Más popular', 'Most popular')}
             </span>
             <span className="relative z-[2] mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-white/25 px-2.5 py-1 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white ring-1 ring-white/40 backdrop-blur-sm">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -176,7 +190,7 @@ export function PricingSection() {
                   strokeLinejoin="round"
                 />
               </svg>
-              1 mes gratis
+              {t('1 mes gratis', '1 month free')}
             </span>
             <h3 className="relative z-[2] m-0 mb-2 text-2xl">Premium</h3>
 
@@ -184,33 +198,43 @@ export function PricingSection() {
               <>
                 <p className="relative z-[2] m-0 flex flex-wrap items-baseline gap-x-1 gap-y-0 text-[2.75rem] font-extrabold leading-none" id="premiumPrice">
                   <span className="align-super text-xl">€</span>
-                  <span id="premiumAmount">7,92</span>
-                  <span className="text-[1.35rem] font-bold opacity-95">/mes</span>
+                  <span id="premiumAmount">{t('7,92', '7.92')}</span>
+                  <span className="text-[1.35rem] font-bold opacity-95">{t('/mes', '/mo')}</span>
                 </p>
                 <p className="relative z-[2] mb-1 mt-2 text-[0.9rem] font-medium opacity-95" id="premiumPeriod">
-                  Facturación anual: <strong className="font-bold text-white">94,99 €</strong> al año
+                  {t(
+                    <>
+                      Facturación anual: <strong className="font-bold text-white">94,99 €</strong> al año
+                    </>,
+                    <>
+                      Billed yearly: <strong className="font-bold text-white">€94.99</strong> per year
+                    </>,
+                  )}
                 </p>
-                <p className="relative z-[2] mb-4 text-[0.85rem] opacity-90">≈ 0,26 € al día</p>
+                <p className="relative z-[2] mb-4 text-[0.85rem] opacity-90">{t('≈ 0,26 € al día', '≈ €0.26 a day')}</p>
               </>
             ) : (
               <>
                 <p className="relative z-[2] m-0 flex flex-wrap items-baseline gap-x-1 gap-y-0 text-[2.75rem] font-extrabold leading-none" id="premiumPrice">
                   <span className="align-super text-xl">€</span>
-                  <span id="premiumAmount">14,99</span>
-                  <span className="text-[1.35rem] font-bold opacity-95">/mes</span>
+                  <span id="premiumAmount">{t('14,99', '14.99')}</span>
+                  <span className="text-[1.35rem] font-bold opacity-95">{t('/mes', '/mo')}</span>
                 </p>
                 <p className="relative z-[2] mb-4 mt-2 text-[0.85rem] opacity-90" id="premiumPeriod">
-                  ≈ 0,50 € al día
+                  {t('≈ 0,50 € al día', '≈ €0.50 a day')}
                 </p>
               </>
             )}
 
             <p className="relative z-[2] mb-3 rounded-lg border border-white/25 bg-white/10 px-3 py-2.5 text-[0.92rem] font-semibold leading-snug text-white shadow-sm backdrop-blur-sm">
-              Sin techos en productos, eventos y ventas; además compartir con tu equipo, exportar a Excel e IA:
+              {t(
+                'Sin techos en productos, eventos y ventas; además compartir con tu equipo, exportar a Excel e IA:',
+                'No caps on products, events and sales; plus team sharing, Excel export and AI:',
+              )}
             </p>
 
             <ul className={cn('relative z-[2] m-0 mb-5 list-none p-0 text-white/95')}>
-              {[
+              {t<ReactNode[]>([
                 'Sin anuncios',
                 'Productos, eventos y ventas ilimitados por evento',
                 'Compartir inventarios con tu equipo',
@@ -223,21 +247,34 @@ export function PricingSection() {
                   <strong>Exportación de facturas del POS a Excel</strong> (menú ⋮ del evento) — para tu gestoría.
                 </>,
                 'Imágenes en productos',
-              ].map((t, i) => (
+              ], [
+                'No ads',
+                'Unlimited products, events and sales per event',
+                'Share inventories with your team',
+                <>
+                  <strong>Smart AI analysis</strong> — inventory health and recommendations
+                </>,
+                'Advanced reports and statistics',
+                'Inventory export to Excel with history',
+                <>
+                  <strong>Export POS invoices to Excel</strong> (event ⋮ menu) — for your accountant.
+                </>,
+                'Product photos',
+              ]).map((item, i) => (
                 <li
                   key={i}
                   className="relative border-b border-white/20 py-2 pl-7 before:absolute before:left-0 before:font-extrabold before:text-[#c8ff8a] before:content-['✓']"
                 >
-                  {t}
+                  {item}
                 </li>
               ))}
             </ul>
 
             <p className="relative z-[2] mb-4 text-center text-[0.95rem] font-semibold leading-snug text-white">
-              Primer mes gratis · Sin permanencia
+              {t('Primer mes gratis · Sin permanencia', 'First month free · No commitment')}
               <br />
               <span className="text-[0.88rem] font-medium opacity-95">
-                Cancela cuando quieras desde Google Play o App Store
+                {t('Cancela cuando quieras desde Google Play o App Store', 'Cancel anytime from Google Play or the App Store')}
               </span>
             </p>
 
@@ -253,7 +290,7 @@ export function PricingSection() {
                 })}
                 data-cursor-magnet
               >
-                Probar 1 mes gratis · Google Play
+                {t('Probar 1 mes gratis · Google Play', 'Try 1 month free · Google Play')}
               </a>
               <a
                 href={URL_APPLE}
@@ -266,7 +303,7 @@ export function PricingSection() {
                 })}
                 data-cursor-magnet
               >
-                Probar 1 mes gratis · App Store
+                {t('Probar 1 mes gratis · App Store', 'Try 1 month free · App Store')}
               </a>
             </div>
           </article>

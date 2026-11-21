@@ -4,6 +4,7 @@ import { cn } from '../lib/cn';
 import { detectDevice, preferredMobileStore, type MobileStore } from '../lib/detectPlatform';
 import { publicUrl } from '../lib/publicUrl';
 import { URL_APPLE, URL_PLAY } from '../lib/urls';
+import { useLang } from '../i18n';
 
 function initialStore(): MobileStore {
   if (typeof navigator === 'undefined') return 'google-play';
@@ -12,6 +13,7 @@ function initialStore(): MobileStore {
 
 export const SiteHeader = forwardRef<HTMLElement>(function SiteHeader(_props, ref) {
   const [store] = useState<MobileStore>(initialStore);
+  const { lang, setLang, t } = useLang();
 
   return (
     <header
@@ -27,30 +29,52 @@ export const SiteHeader = forwardRef<HTMLElement>(function SiteHeader(_props, re
         <a
           className="inline-flex items-center gap-2.5 font-extrabold text-[var(--text-color)] no-underline"
           href="#top"
-          aria-label="Inventario Fácil inicio"
+          aria-label={t('Inventario Fácil inicio', 'Inventario Fácil home')}
           data-cursor-magnet
         >
           <img src={publicUrl('app-icon.png')} alt="" width={40} height={40} className="rounded-[14px] shadow-[var(--shadow)]" />
-          <span>Inventario Fácil</span>
+          <span className="whitespace-nowrap max-[400px]:hidden">Inventario Fácil</span>
         </a>
-        <nav className="hidden gap-5 text-[0.95rem] font-medium min-[900px]:flex" aria-label="Principal">
+        <nav className="hidden gap-5 text-[0.95rem] font-medium min-[900px]:flex" aria-label={t('Principal', 'Main')}>
           <a className="text-[var(--text-light)] no-underline transition-colors hover:text-[var(--accent-1)]" href="#beneficios" data-cursor-magnet>
-            Beneficios
+            {t('Beneficios', 'Benefits')}
           </a>
           <a className="text-[var(--text-light)] no-underline transition-colors hover:text-[var(--accent-1)]" href="#caracteristicas" data-cursor-magnet>
-            Funciones
+            {t('Funciones', 'Features')}
           </a>
           <a className="text-[var(--text-light)] no-underline transition-colors hover:text-[var(--accent-1)]" href="#comparativa" data-cursor-magnet>
-            Comparativa
+            {t('Comparativa', 'Comparison')}
           </a>
           <a className="text-[var(--text-light)] no-underline transition-colors hover:text-[var(--accent-1)]" href="#precios" data-cursor-magnet>
-            Precios
+            {t('Precios', 'Pricing')}
           </a>
           <a className="text-[var(--text-light)] no-underline transition-colors hover:text-[var(--accent-1)]" href="#faq" data-cursor-magnet>
             FAQ
           </a>
         </nav>
-        <div className="flex shrink-0 items-center">
+        <div className="flex shrink-0 items-center gap-2">
+          <div
+            className="inline-flex rounded-full border border-slate-900/[0.08] bg-white/70 p-0.5 text-[0.75rem] font-bold"
+            role="group"
+            aria-label={t('Idioma', 'Language')}
+          >
+            {(['es', 'en'] as const).map((l) => (
+              <button
+                key={l}
+                type="button"
+                onClick={() => setLang(l)}
+                aria-pressed={lang === l}
+                className={cn(
+                  'rounded-full border-0 px-2.5 py-1.5 uppercase transition-colors',
+                  lang === l
+                    ? 'bg-[var(--text-color)] text-white'
+                    : 'bg-transparent text-[var(--text-light)] hover:text-[var(--text-color)]',
+                )}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
           {store === 'app-store' ? (
             <a
               href={URL_APPLE}

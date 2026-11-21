@@ -1,6 +1,7 @@
 import { btnPrimaryShine, btnRow, btnShineOverlay } from '../lib/buttonClasses';
+import { useLang } from '../i18n';
 
-const cards = [
+const cardsEs = [
   {
     figure: '~3 h/mes',
     title: 'Ahorra tiempo con la gestoría',
@@ -18,7 +19,27 @@ const cards = [
   },
 ];
 
+const cardsEn = [
+  {
+    figure: '~3 h/mo',
+    title: 'Saved on bookkeeping',
+    body: 'Export every event invoice to Excel in two taps and email it. No more typing it all in by hand.',
+  },
+  {
+    figure: '€0',
+    title: 'On extra POS software',
+    body: 'A POS with checkout and sale lines inside the app you already use for inventory. No separate licences.',
+  },
+  {
+    figure: '−47 %',
+    title: 'With the yearly plan',
+    body: 'Pay once a year and it comes to less than €8 a month. The first month is still free.',
+  },
+];
+
 export function RoiSection() {
+  const { t } = useLang();
+  const cards = t(cardsEs, cardsEn);
   return (
     <section
       className="relative overflow-hidden bg-[var(--surface-color)] py-16 md:py-24"
@@ -39,21 +60,30 @@ export function RoiSection() {
             className="inline-block h-2 w-2 rounded-full [background-image:var(--grad-brand)]"
             aria-hidden
           />
-          Tu inversión
+          {t('Tu inversión', 'Your investment')}
         </p>
         <h2
           id="roiTitle"
           className="m-0 mb-3 text-center text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight text-[var(--text-color)]"
         >
-          Menos de un menú al mes
+          {t('Menos de un menú al mes', 'Less than a lunch a month')}
         </h2>
         <p className="mx-auto mb-4 max-w-[680px] text-center text-[1.0625rem] font-medium leading-[1.55] tracking-tight text-[var(--text-light)]">
-          Con el plan <strong>anual</strong>, Premium cuesta unos <strong>7,92 € al mes</strong> en la práctica —unos{' '}
-          <strong>0,26 € al día</strong>. Por ese precio tienes productos, eventos y ventas ilimitados, análisis con IA y
-          exportación de facturas a Excel para enviar a tu gestoría.
+          {t(
+            <>
+              Con el plan <strong>anual</strong>, Premium cuesta unos <strong>7,92 € al mes</strong> en la práctica —unos{' '}
+              <strong>0,26 € al día</strong>. Por ese precio tienes productos, eventos y ventas ilimitados, análisis con IA y
+              exportación de facturas a Excel para enviar a tu gestoría.
+            </>,
+            <>
+              With the <strong>yearly</strong> plan, Premium works out at about <strong>€7.92 a month</strong> — roughly{' '}
+              <strong>€0.26 a day</strong>. For that you get unlimited products, events and sales, AI analysis and invoice
+              export to Excel to send to your accountant.
+            </>,
+          )}
         </p>
         <p className="mx-auto mb-10 max-w-[680px] text-center text-[1.0625rem] font-medium leading-[1.55] tracking-tight text-[var(--text-light)]">
-          Ventajas que notas en el día a día:
+          {t('Ventajas que notas en el día a día:', 'Benefits you notice every day:')}
         </p>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
@@ -78,7 +108,10 @@ export function RoiSection() {
 
         <div className="mx-auto mt-10 flex max-w-[720px] flex-col items-center gap-3 text-center">
           <p className="text-[0.95rem] text-[var(--text-light)]">
-            Primer mes gratis · Cancela cuando quieras desde la tienda · Sin permanencia
+            {t(
+              'Primer mes gratis · Cancela cuando quieras desde la tienda · Sin permanencia',
+              'First month free · Cancel anytime from the store · No commitment',
+            )}
           </p>
           <a
             href="#precios"
@@ -89,7 +122,7 @@ export function RoiSection() {
               params: { button_location: 'roi_section', button_text: 'Ver planes', section: 'roi' },
             })}
           >
-            <span className={btnRow}>Ver planes y empezar gratis</span>
+            <span className={btnRow}>{t('Ver planes y empezar gratis', 'See plans and start free')}</span>
             <span className={btnShineOverlay} aria-hidden="true" />
           </a>
         </div>

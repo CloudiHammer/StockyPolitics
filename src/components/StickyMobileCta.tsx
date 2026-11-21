@@ -3,6 +3,7 @@ import { cn } from '../lib/cn';
 import { publicUrl } from '../lib/publicUrl';
 import { detectDevice, preferredMobileStore, type MobileStore } from '../lib/detectPlatform';
 import { URL_APPLE, URL_PLAY } from '../lib/urls';
+import { useLang } from '../i18n';
 
 function initialStore(): MobileStore {
   if (typeof navigator === 'undefined') return 'google-play';
@@ -12,6 +13,7 @@ function initialStore(): MobileStore {
 export function StickyMobileCta() {
   const [visible, setVisible] = useState(false);
   const [store] = useState<MobileStore>(initialStore);
+  const { t } = useLang();
 
   useEffect(() => {
     const hero = document.getElementById('inicio');
@@ -69,7 +71,11 @@ export function StickyMobileCta() {
       <div
         className="pointer-events-auto rounded-2xl border border-slate-900/[0.08] bg-white/95 p-2.5 shadow-[0_10px_30px_rgba(15,23,42,0.18)] backdrop-blur-md"
         role="region"
-        aria-label={isApple ? 'Descargar Inventario Fácil en el App Store' : 'Descargar Inventario Fácil en Google Play'}
+        aria-label={
+          isApple
+            ? t('Descargar Inventario Fácil en el App Store', 'Download Inventario Fácil on the App Store')
+            : t('Descargar Inventario Fácil en Google Play', 'Get Inventario Fácil on Google Play')
+        }
       >
         <div className="mb-2 flex items-center gap-2.5 pl-1">
           <img
@@ -83,7 +89,7 @@ export function StickyMobileCta() {
           <div className="min-w-0 flex-1 leading-tight">
             <span className="block truncate text-[0.9rem] font-bold text-[var(--text-color)]">Inventario Fácil</span>
             <span className="block truncate text-[0.72rem] text-[var(--text-light)]">
-              {isApple ? 'Disponible en App Store' : 'Disponible en Google Play'}
+              {isApple ? t('Disponible en App Store', 'Available on the App Store') : t('Disponible en Google Play', 'Available on Google Play')}
             </span>
           </div>
         </div>
@@ -106,7 +112,7 @@ export function StickyMobileCta() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="shrink-0" aria-hidden="true">
               <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
             </svg>
-            <span className="text-balance">Descargar en App Store</span>
+            <span className="text-balance">{t('Descargar en App Store', 'Download on the App Store')}</span>
           </a>
         ) : (
           <a
@@ -130,7 +136,7 @@ export function StickyMobileCta() {
               <path d="M3.84 2.15L14.54 11.15L6.05 2.66L3.84 2.15Z" fill="#FF3A44" />
               <path d="M16.81 8.88L14.54 11.15L20.16 12.85L16.81 8.88Z" fill="#FFD200" />
             </svg>
-            <span className="text-balance">Descargar en Google Play</span>
+            <span className="text-balance">{t('Descargar en Google Play', 'Get it on Google Play')}</span>
           </a>
         )}
       </div>

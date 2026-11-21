@@ -3,15 +3,15 @@ import { btnPrimaryShine, btnRow, btnShineOverlay } from '../lib/buttonClasses';
 import { cn } from '../lib/cn';
 import { publicUrl } from '../lib/publicUrl';
 import { URL_APPLE, URL_PLAY } from '../lib/urls';
+import { useLang } from '../i18n';
 
-const marqueeItems = [
-  'Gratis · Hasta 30 productos',
-  'Punto de venta en eventos',
-  'Comparte inventarios con tu equipo',
-  'Premium: 1 mes gratis',
-];
+const marqueeItems = {
+  es: ['Gratis · Hasta 30 productos', 'Punto de venta en eventos', 'Comparte inventarios con tu equipo', 'Premium: 1 mes gratis'],
+  en: ['Free · Up to 30 products', 'Point of sale at events', 'Share inventories with your team', 'Premium: 1 month free'],
+};
 
 export function Hero() {
+  const { lang, t } = useLang();
   return (
     <section
       id="inicio"
@@ -56,7 +56,7 @@ export function Hero() {
             </div>
             <p className="m-0 inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-white/25 bg-white/15 px-4 py-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-white/95 shadow-lg backdrop-blur-md">
               <span className="h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-white to-sky-200 shadow-[0_0_12px_rgba(255,255,255,0.9)]" aria-hidden />
-              <span className="text-balance">Stock en la nube · Ventas en eventos · Equipo sincronizado</span>
+              <span className="text-balance">{t('Stock en la nube · Ventas en eventos · Equipo sincronizado', 'Cloud stock · Event sales · Team in sync')}</span>
             </p>
             <h1 id="heroTitle" className="m-0 flex w-full flex-col items-center gap-1">
               <span className="bg-gradient-to-r from-white via-amber-100 to-sky-100 bg-clip-text text-[clamp(2.5rem,6.5vw,3.75rem)] font-black leading-tight tracking-tighter text-transparent drop-shadow-md max-md:!text-white max-md:[-webkit-text-fill-color:#fff] max-md:bg-none">
@@ -64,19 +64,24 @@ export function Hero() {
               </span>
             </h1>
             <ul className="m-0 flex w-full max-w-xl flex-wrap justify-center gap-2 p-0 sm:max-w-none">
-              {['Stock y ventas en el bolsillo', 'Sin curva de aprendizaje', 'Vende en eventos desde el móvil'].map((t) => (
+              {t(
+                ['Stock y ventas en el bolsillo', 'Sin curva de aprendizaje', 'Vende en eventos desde el móvil'],
+                ['Stock and sales in your pocket', 'No learning curve', 'Sell at events from your phone'],
+              ).map((item) => (
                 <li
-                  key={t}
+                  key={item}
                   className="relative list-none rounded-full border border-white/20 bg-black/15 py-2 pl-8 pr-3.5 text-[0.88rem] font-semibold text-white/95 backdrop-blur-sm"
                 >
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[0.75rem] text-emerald-200">✓</span>
-                  {t}
+                  {item}
                 </li>
               ))}
             </ul>
             <p className="m-0 max-w-prose text-balance text-[clamp(1.05rem,2vw,1.25rem)] leading-relaxed text-white/95">
-              Controla el stock, vende en eventos y comparte inventarios con tu equipo. Todo desde el móvil, sin
-              complicaciones — pensado para autónomos, tiendas pequeñas y proyectos que empiezan desde casa.
+              {t(
+                'Controla el stock, vende en eventos y comparte inventarios con tu equipo. Todo desde el móvil, sin complicaciones — pensado para autónomos, tiendas pequeñas y proyectos que empiezan desde casa.',
+                'Track stock, sell at events and share inventories with your team. All from your phone, hassle-free — built for freelancers, small shops and projects starting from home.',
+              )}
             </p>
             <div className="flex w-full flex-wrap justify-center gap-3">
               <a
@@ -105,7 +110,7 @@ export function Hero() {
                   <path d="M16.81 8.88L14.54 11.15L20.16 12.85L16.81 8.88Z" fill="#FFD200" />
                   <path d="M20.16 12.85L14.54 12.85L16.81 15.12L20.16 12.85Z" fill="#00D9FF" />
                 </svg>
-                Descargar en Google Play
+                {t('Descargar en Google Play', 'Get it on Google Play')}
               </span>
               <span className={btnShineOverlay} aria-hidden="true" />
               </a>
@@ -128,7 +133,7 @@ export function Hero() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                 </svg>
-                Descargar en App Store
+                {t('Descargar en App Store', 'Download on the App Store')}
               </span>
               <span className={btnShineOverlay} aria-hidden="true" />
               </a>
@@ -150,10 +155,10 @@ export function Hero() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                Premium: 1 mes gratis
+                {t('Premium: 1 mes gratis', 'Premium: 1 month free')}
               </span>
               <span aria-hidden>·</span>
-              <span className="text-balance">Gratis para siempre hasta 30 productos</span>
+              <span className="text-balance">{t('Gratis para siempre hasta 30 productos', 'Free forever up to 30 products')}</span>
             </p>
           </div>
 
@@ -164,16 +169,16 @@ export function Hero() {
             <div className="pointer-events-none absolute left-1/2 top-1/2 -z-[1] h-[min(20rem,50vw)] w-[min(20rem,50vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-amber-300/35 via-emerald-300/20 to-indigo-400/30 blur-3xl" />
             <div className="relative w-full max-w-[17.5rem]">
               <div className="absolute -left-1 top-[6%] z-[2] max-w-[10.5rem] -rotate-6 rounded-xl border border-white/35 bg-white/18 px-2.5 py-1.5 text-[0.72rem] font-semibold leading-tight text-white shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-md">
-                Ventas en ferias
+                {t('Ventas en ferias', 'Sales at fairs')}
               </div>
               <div className="absolute -right-1 top-[18%] z-[2] rotate-3 rounded-xl border border-white/35 bg-white/18 px-2.5 py-1.5 text-[0.72rem] font-semibold leading-tight text-white shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-md">
-                IA en el inventario
+                {t('IA en el inventario', 'AI in your inventory')}
               </div>
               <div className="absolute -bottom-1 left-[6%] z-[2] -rotate-3 rounded-xl border border-white/35 bg-white/18 px-2.5 py-1.5 text-[0.72rem] font-semibold leading-tight text-white shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-md">
-                Sincronizado en la nube
+                {t('Sincronizado en la nube', 'Synced to the cloud')}
               </div>
               <div className="absolute -bottom-2 right-[4%] z-[2] rotate-6 rounded-xl border border-white/35 bg-white/18 px-2.5 py-1.5 text-[0.72rem] font-semibold leading-tight text-white shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-md">
-                Tu equipo al día
+                {t('Tu equipo al día', 'Your team up to date')}
               </div>
 
               <div className="relative rounded-[1.5rem] border border-white/30 bg-gradient-to-b from-white/16 to-white/[0.07] p-4 shadow-[0_28px_64px_rgba(0,0,0,0.28)] backdrop-blur-md">
@@ -219,9 +224,9 @@ export function Hero() {
             <div className="flex w-max animate-[marquee_32s_linear_infinite] gap-4 text-[0.9rem] opacity-90 motion-reduce:animate-none">
               {[0, 1].map((dup) => (
                 <Fragment key={dup}>
-                  {marqueeItems.map((t) => (
-                    <Fragment key={`${dup}-${t}`}>
-                      <span>{t}</span>
+                  {marqueeItems[lang].map((item) => (
+                    <Fragment key={`${dup}-${item}`}>
+                      <span>{item}</span>
                       <span>·</span>
                     </Fragment>
                   ))}
@@ -234,7 +239,7 @@ export function Hero() {
       <a
         href="#beneficios"
         className="absolute bottom-[max(1rem,env(safe-area-inset-bottom,0px))] left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 opacity-85"
-        aria-label="Desplazar a beneficios"
+        aria-label={t('Desplazar a beneficios', 'Scroll to benefits')}
       >
         <span className="h-10 w-0.5 animate-[scrollBounce_2s_ease-in-out_infinite] rounded-full bg-white/85 motion-reduce:animate-none" />
       </a>

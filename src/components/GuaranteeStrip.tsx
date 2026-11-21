@@ -1,7 +1,11 @@
+import { useLang } from '../i18n';
+
 const items = [
   {
     title: '1 mes gratis de Premium',
     body: 'Prueba todas las funciones sin límites durante el primer mes. Sin compromiso.',
+    titleEn: '1 month of Premium free',
+    bodyEn: 'Try every feature without limits for the first month. No strings attached.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
@@ -17,6 +21,8 @@ const items = [
   {
     title: 'Cancela cuando quieras',
     body: 'Gestiona la suscripción desde tu Google Play o App Store. En cualquier momento.',
+    titleEn: 'Cancel anytime',
+    bodyEn: 'Manage your subscription from Google Play or the App Store. Whenever you like.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
@@ -27,6 +33,8 @@ const items = [
   {
     title: 'Sin permanencia',
     body: 'Ni contratos largos ni letra pequeña. Mantienes todo lo que hayas añadido aunque vuelvas al plan gratis.',
+    titleEn: 'No commitment',
+    bodyEn: 'No long contracts, no fine print. You keep everything you added even if you go back to the free plan.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
@@ -43,8 +51,12 @@ const items = [
 ];
 
 export function GuaranteeStrip() {
+  const { t } = useLang();
   return (
-    <section className="bg-[var(--background-color)] py-10 md:py-14" aria-label="Garantías y compromiso">
+    <section
+      className="bg-[var(--background-color)] py-10 md:py-14"
+      aria-label={t('Garantías y compromiso', 'Guarantees and commitment')}
+    >
       <div className="site-container">
         <div className="grid grid-cols-1 gap-4 rounded-[var(--border-radius-lg)] border border-slate-900/[0.08] bg-white px-5 py-6 shadow-[var(--shadow)] md:grid-cols-3 md:gap-6 md:px-8 md:py-7">
           {items.map((it) => (
@@ -56,8 +68,8 @@ export function GuaranteeStrip() {
                 {it.icon}
               </span>
               <div className="flex min-w-0 flex-col">
-                <span className="text-[0.95rem] font-bold text-[var(--text-color)]">{it.title}</span>
-                <span className="text-[0.875rem] leading-[1.5] text-[var(--text-light)]">{it.body}</span>
+                <span className="text-[0.95rem] font-bold text-[var(--text-color)]">{t(it.title, it.titleEn)}</span>
+                <span className="text-[0.875rem] leading-[1.5] text-[var(--text-light)]">{t(it.body, it.bodyEn)}</span>
               </div>
             </div>
           ))}

@@ -1,7 +1,9 @@
 import { btnPrimaryOnBrand, btnRow, btnShineOverlay } from '../lib/buttonClasses';
 import { URL_APPLE, URL_PLAY, EMAIL } from '../lib/urls';
+import { useLang } from '../i18n';
 
 export function CtaFinal() {
+  const { t } = useLang();
   return (
     <section
       className="relative overflow-hidden py-[100px] text-center text-white [background-image:var(--grad-brand)] [background-size:100%_100%]"
@@ -22,11 +24,13 @@ export function CtaFinal() {
       />
       <div className="site-container relative z-[1]">
         <h2 className="m-0 mb-3 text-[clamp(1.85rem,4vw,2.75rem)] font-extrabold">
-          Empieza gratis en 2 minutos
+          {t('Empieza gratis en 2 minutos', 'Start free in 2 minutes')}
         </h2>
         <p className="mx-auto mb-6 max-w-[620px] text-[1.1rem] opacity-95">
-          Descarga Inventario Fácil, añade tus primeros productos y decide luego si activas Premium. El primer mes es gratis y
-          cancelas cuando quieras.
+          {t(
+            'Descarga Inventario Fácil, añade tus primeros productos y decide luego si activas Premium. El primer mes es gratis y cancelas cuando quieras.',
+            'Download Inventario Fácil, add your first products and decide later whether to go Premium. The first month is free and you can cancel anytime.',
+          )}
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <a
@@ -44,7 +48,7 @@ export function CtaFinal() {
               },
             })}
           >
-            <span className={btnRow}>Descargar en Google Play</span>
+            <span className={btnRow}>{t('Descargar en Google Play', 'Get it on Google Play')}</span>
             <span className={btnShineOverlay} aria-hidden="true" />
           </a>
           <a
@@ -62,15 +66,18 @@ export function CtaFinal() {
               },
             })}
           >
-            <span className={btnRow}>Descargar en App Store</span>
+            <span className={btnRow}>{t('Descargar en App Store', 'Download on the App Store')}</span>
             <span className={btnShineOverlay} aria-hidden="true" />
           </a>
         </div>
         <p className="mx-auto mt-6 max-w-xl text-[0.95rem] opacity-95">
-          Gratis para siempre hasta 30 productos · Premium: primer mes gratis · Sin permanencia
+          {t(
+            'Gratis para siempre hasta 30 productos · Premium: primer mes gratis · Sin permanencia',
+            'Free forever up to 30 products · Premium: first month free · No commitment',
+          )}
         </p>
         <p className="mx-auto mt-3 text-[0.9rem] opacity-85">
-          ¿Prefieres escribirnos?{' '}
+          {t('¿Prefieres escribirnos?', 'Prefer to email us?')}{' '}
           <a className="text-white underline underline-offset-2" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
