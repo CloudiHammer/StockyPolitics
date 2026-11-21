@@ -1,0 +1,52 @@
+# Compila la web y la sube por FTP al hosting de DonDominio en cada push a main.
+#
+# Configuración en GitHub → Settings → Secrets and variables → Actions:
+#   Secrets (obligatorios):  FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+#   Variables (opcionales):  FTP_SERVER_DIR  carpeta pública en el hosting (por defecto /public/)
+#                            FTP_PROTOCOL    ftps (por defecto) o ftp
+name: Deploy DonDominio (FTP)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-ftp
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install & build
+        run: npm ci && npm run build
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          local-dir: ./docs/
+          server-dir: ${{ vars.FTP_SERVER_DIR || '/public/' }}
+          # Archivos solo útiles para GitHub Pages.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            CNAME
+            .nojekyll

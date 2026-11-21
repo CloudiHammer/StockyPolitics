@@ -2,7 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-// Dominio propio (CNAME en public/) → GitHub Pages sirve el sitio en la raíz /.
+// Hosting en DonDominio: el sitio se sirve en la raíz / (ver .github/workflows/deploy-ftp.yml).
 export default defineConfig({
   plugins: [tailwindcss(), react()],
   base: '/',
