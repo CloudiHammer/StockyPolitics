@@ -1,9 +1,10 @@
 # Compila la web y la sube por FTP al hosting de DonDominio en cada push a main.
 #
-# Configuración en GitHub → Settings → Secrets and variables → Actions:
-#   Secrets (obligatorios):  FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
-#   Variables (opcionales):  FTP_SERVER_DIR  carpeta pública en el hosting (por defecto /public/)
-#                            FTP_PROTOCOL    ftps (por defecto) o ftp
+# Configuración en GitHub → Settings → Environments → "FTP_SERVER":
+#   Environment secrets (obligatorios): FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+#   Variables (opcionales, del environment o del repositorio):
+#     FTP_SERVER_DIR  carpeta pública en el hosting (por defecto /public/)
+#     FTP_PROTOCOL    ftps (por defecto) o ftp
 name: Deploy DonDominio (FTP)
 
 on:
@@ -21,6 +22,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: FTP_SERVER
     steps:
       - name: Checkout
         uses: actions/checkout@v4
