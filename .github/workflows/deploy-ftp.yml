@@ -37,6 +37,32 @@ jobs:
       - name: Install & build
         run: npm ci && npm run build
 
+      - name: Check FTP settings
+        # Comprueba qué datos llegan con valor sin mostrar nunca su contenido.
+        env:
+          S_SERVER: ${{ secrets.FTP_SERVER }}
+          S_USERNAME: ${{ secrets.FTP_USERNAME }}
+          S_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          V_SERVER: ${{ vars.FTP_SERVER }}
+          V_USERNAME: ${{ vars.FTP_USERNAME }}
+          V_PASSWORD: ${{ vars.FTP_PASSWORD }}
+        run: |
+          missing=0
+          summary=""
+          for n in SERVER USERNAME PASSWORD; do
+            s="S_$n"; v="V_$n"
+            sv="${!s}"; vv="${!v}"
+            trimmed="$(printf '%s' "$sv" | tr -d '[:space:]')"
+            if [ -n "$trimmed" ]; then st="con valor"; elif [ -n "$sv" ]; then st="solo espacios"; missing=1; else st="vacío o no existe"; missing=1; fi
+            [ -n "$vv" ] && vs="existe" || vs="no existe"
+            echo "FTP_$n -> secret: $st | variable: $vs"
+            summary="$summary FTP_$n=secret $st, variable $vs;"
+          done
+          echo "FTP_SERVER_DIR: ${{ vars.FTP_SERVER_DIR || '/public/ (por defecto)' }}"
+          echo "FTP_PROTOCOL: ${{ vars.FTP_PROTOCOL || 'ftps (por defecto)' }}"
+          if [ "$missing" = 1 ]; then echo "::error::Falta algún secret FTP con valor:$summary"; exit 1; fi
+          echo "::notice::Datos FTP correctos:$summary"
+
       - name: Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
