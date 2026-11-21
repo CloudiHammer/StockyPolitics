@@ -87,6 +87,29 @@ a:hover { text-decoration-thickness: 2px; }
 .topbar nav a:hover { color: var(--ink); background: var(--surface-2); }
 .topbar nav a[aria-current="page"] { color: var(--ink); background: var(--surface-2); }
 
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
+.lang-switch {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.lang-switch button {
+  border: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+[hidden] { display: none !important; }
+
 /* Encabezado del documento */
 .hero {
   background: var(--grad-soft);
@@ -270,7 +293,8 @@ a:hover { text-decoration-thickness: 2px; }
 .footer a:hover { color: var(--ink); }
 
 @media (max-width: 560px) {
-  .topbar nav a { padding: 6px 8px; font-size: 0.8rem; }
+  .topbar nav a { padding: 6px 6px; font-size: 0.78rem; }
+  .topbar-inner { padding: 10px 12px; gap: 8px; }
   .brand span { display: none; }
   .section { padding: 20px 16px; }
   .hero-inner { padding: 36px 16px 28px; }
